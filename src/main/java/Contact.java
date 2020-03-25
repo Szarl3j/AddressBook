@@ -1,4 +1,4 @@
-public class Contacts {
+public class Contact {
     private int Id;
     private String FirstName;
     private String Surname;
@@ -6,7 +6,7 @@ public class Contacts {
     private String email;
     private String address;
 
-    Contacts(int Id, String FirstName, String Surname, String phoneNumber, String email, String address) {
+    Contact(int Id, String FirstName, String Surname, String phoneNumber, String email, String address) {
         this.Id = Id;
         this.FirstName = FirstName;
         this.Surname = Surname;
@@ -15,7 +15,7 @@ public class Contacts {
         this.address = address;
     }
 
-    Contacts(String FirstName, String Surname, String phoneNumber, String email, String address) {
+    Contact(String FirstName, String Surname, String phoneNumber, String email, String address) {
         this(nextId.getAndIncrement(), FirstName, Surname, phoneNumber, email, address);
     }
 
