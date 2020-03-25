@@ -80,7 +80,7 @@ public class Application {
         persons.add(contact);
         System.out.println(" Added contact with number " + contact.getId() + contact);
         System.out.println();
-        showMenu;
+        showMenu();
     }
 
     private static void addToFile(Contact contact) {

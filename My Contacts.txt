@@ -1,0 +1,12 @@
+Adam
+Kowalski
+123456789
+adam.kowal@o2.pl
+Konstancińska 1 02-924 Warszawa Polska
+
+Hubert
+Kozłowski
+987654321
+koziol@poczta.pl
+Nowomiejska 4 warszawa
+
