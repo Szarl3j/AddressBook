@@ -97,7 +97,7 @@ public class Application {
             String name = null;
             while ((name = br.readLine()) != null) {
                 Contact contact = new Contact(name, br.readLine(), br.readLine(), br.readLine(), br.readLine());
-                contact.add(persons);
+                persons.add(contact);
                 br.readLine();
             }
             return true;

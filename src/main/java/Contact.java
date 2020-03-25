@@ -1,4 +1,7 @@
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Contact {
+    private static AtomicInteger nextID = new AtomicInteger(1);
     private int Id;
     private String FirstName;
     private String Surname;
@@ -16,7 +19,7 @@ public class Contact {
     }
 
     Contact(String FirstName, String Surname, String phoneNumber, String email, String address) {
-        this(nextId.getAndIncrement(), FirstName, Surname, phoneNumber, email, address);
+        this(nextID.getAndIncrement(), FirstName, Surname, phoneNumber, email, address);
     }
 
     int getId() {
