@@ -50,4 +50,32 @@ public class Contact {
         return"\n\nId: " + getId() + "\nName: " + getFirstName() + "\nSurname: " + getSurname() + "\nPhone number: "
                 + getPhoneNumber() + "\nEmail: "  +getEmail() + "\nAddress: " + getAddress();
     }
+
+    public static void setNextID(AtomicInteger nextID) {
+        Contact.nextID = nextID;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
+    }
+
+    public void setSurname(String surname) {
+        Surname = surname;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }
