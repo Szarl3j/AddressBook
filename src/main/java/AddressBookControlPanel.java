@@ -92,11 +92,9 @@ public class AddressBookControlPanel {
                     break;
                 case DELETE_CONTACT:
                     System.out.println("Put id number which you want delete ");
-                    int Index = sc.nextInt() - 1;
+                    int Id = sc.nextInt() - 1;
                     sc.nextLine();
-                    fillContactInformation(contacts.get(Index));
-                    System.out.println("Contact is removed from the list.");
-                    System.out.println("Contact's list are updated.");
+                    deleteContactFromList().remove(Id);
                     break;
                 case EXIT:
                     System.out.println(" Program is closed. ");
@@ -199,7 +197,7 @@ public class AddressBookControlPanel {
     }
 
     private List<Contact> deleteContactFromList() {
-        List<Contact> contacts = deleteContactFromList();
+        Contact contactIsRemoved = contacts.remove(Id);
         System.out.println("Contact is removed from the list.");
         System.out.println("Contact's list are updated.");
         return contacts;
