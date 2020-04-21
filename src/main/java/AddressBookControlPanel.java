@@ -106,10 +106,10 @@ public class AddressBookControlPanel {
 
     private Action showMenuAndChoose() {
         System.out.println(" 1. Add new contact ");
-        System.out.println(" 2. Edit exisisted contact");
+        System.out.println(" 2. Edit exisisted contact - coming soon ");
         System.out.println(" 3. Search contact ");
         System.out.println(" 4. Show all contacts ");
-        System.out.println(" 5. Delete contact ");
+        System.out.println(" 5. Delete contact - coming soon ");
         System.out.println(" 6. Close program ");
         String option;
         option = sc.nextLine();
