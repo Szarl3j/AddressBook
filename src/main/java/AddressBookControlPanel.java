@@ -48,10 +48,10 @@ public class AddressBookControlPanel {
         switch (options) {
             case First_Name:
                 return contacts.stream().filter(person ->
-                        person.getSurname().equals(searchString)).collect(Collectors.toList());
+                        person.getFirstName().equals(searchString)).collect(Collectors.toList());
             case Surname:
                 return contacts.stream().filter(person ->
-                        person.getFirstName().equals(searchString)).collect(Collectors.toList());
+                        person.getSurname().equals(searchString)).collect(Collectors.toList());
             default:
                 System.out.println("Invalid filter option");
                 return new ArrayList<>();
@@ -94,9 +94,16 @@ public class AddressBookControlPanel {
                     System.out.println("Put id number which you want delete ");
                     int Id = sc.nextInt() - 1;
                     sc.nextLine();
-                    deleteContactFromList().remove(Id);
+                    contacts.remove(Id);
                     break;
                 case EXIT:
+                    try{
+                        for(Contact contact:contacts){
+                            data.saveContactToFile(contact);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     System.out.println(" Program is closed. ");
                     System.exit(0);
                     break;
@@ -194,13 +201,5 @@ public class AddressBookControlPanel {
         contacts.setPhoneNumber(phoneNumber);
         contacts.setEmail(email);
         return contacts;
-    }
-
-    private List<Contact> deleteContactFromList() {
-        Contact contactIsRemoved = contacts.remove(Id);
-        System.out.println("Contact is removed from the list.");
-        System.out.println("Contact's list are updated.");
-        return contacts;
-
     }
 }
