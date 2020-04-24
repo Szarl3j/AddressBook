@@ -66,6 +66,7 @@ public class AddressBookControlPanel {
                     Contact contact = getContactInformation();
                     data.saveContactToFile(contact);
                     contacts.add(contact);
+                    System.out.println(" Contact is successfully  added ");
                     break;
                 case EDIT_CONTACT:
                     System.out.println("Put index number which you want edit ");
@@ -92,18 +93,14 @@ public class AddressBookControlPanel {
                     break;
                 case DELETE_CONTACT:
                     System.out.println("Put id number which you want delete ");
-                    int Id = sc.nextInt() - 1;
+                    int Id = sc.nextInt()-1;
                     sc.nextLine();
                     contacts.remove(Id);
+                    System.out.println("Contact is deleted.");
+                    System.out.println("Contact's list are updated.");
                     break;
                 case EXIT:
-                    try{
-                        for(Contact contact:contacts){
-                            data.saveContactToFile(contact);
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    data.saveContactsOverride(contacts);
                     System.out.println(" Program is closed. ");
                     System.exit(0);
                     break;
@@ -113,10 +110,10 @@ public class AddressBookControlPanel {
 
     private Action showMenuAndChoose() {
         System.out.println(" 1. Add new contact ");
-        System.out.println(" 2. Edit exisisted contact - coming soon ");
+        System.out.println(" 2. Edit exisisted contact ");
         System.out.println(" 3. Search contact ");
         System.out.println(" 4. Show all contacts ");
-        System.out.println(" 5. Delete contact - coming soon ");
+        System.out.println(" 5. Delete contact ");
         System.out.println(" 6. Close program ");
         String option;
         option = sc.nextLine();

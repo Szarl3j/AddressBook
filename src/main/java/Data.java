@@ -36,4 +36,15 @@ public class Data {
         }
         return contacts;
     }
+
+    public void saveContactsOverride(List<Contact> contacts) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, false))) {
+            for (Contact contact : contacts) {
+                bw.write(contact.getFirstName() + "\r\n" + contact.getSurname() + "\r\n" + contact.getPhoneNumber() + "\r\n"
+                        + contact.getEmail() + "\r\n" + contact.getAddress() + "\r\n\r\n");
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
 }
